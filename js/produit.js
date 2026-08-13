@@ -63,6 +63,20 @@ function afficherSuggestions(carte) {
   document.querySelector("#bloc-suggestions").hidden = false;
 }
 
+function afficherIndisponibilite(carte) {
+  const bandeau = document.querySelector("#bandeau-ferme");
+  bandeau.textContent = MESSAGE_INDISPONIBLE;
+  bandeau.hidden = false;
+
+  document.querySelector("#produit").classList.add("produit--indisponible");
+
+  const quantite = document.querySelector("#quantite");
+  const bouton = document.querySelector("#ajouter");
+  quantite.disabled = true;
+  bouton.disabled = true;
+  bouton.textContent = "Inscriptions fermees";
+}
+
 function afficherCarte(carte) {
   const essence = essenceParNom(carte.essence);
 
@@ -104,10 +118,19 @@ function afficherCarte(carte) {
   }
 
   document.querySelector("#produit").hidden = false;
+
+  if (estIndisponible(carte)) {
+    afficherIndisponibilite(carte);
+  }
+
   afficherSuggestions(carte);
 }
 
 function brancherAchat(carte) {
+  if (estIndisponible(carte)) {
+    return;
+  }
+
   const bouton = document.querySelector("#ajouter");
   const message = document.querySelector("#message");
 

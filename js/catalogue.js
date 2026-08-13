@@ -42,12 +42,19 @@ function normaliser(texte) {
 }
 
 function gabaritCarte(carte) {
-  const rupture = carte.stock === 0
+  const ferme = estIndisponible(carte);
+
+  const rupture = !ferme && carte.stock === 0
     ? '<span class="carte__rupture">Rupture</span>'
     : "";
 
+  const bandeau = ferme
+    ? `<p class="carte__ferme">${MESSAGE_INDISPONIBLE}</p>`
+    : "";
+
   return `
-    <a class="carte" href="produit.html?id=${carte.id}" data-id="${carte.id}">
+    <a class="carte ${ferme ? "carte--indisponible" : ""}" href="produit.html?id=${carte.id}" data-id="${carte.id}">
+      ${bandeau}
       <div class="carte__visuel">
         <img src="${carte.image}" alt="Carte ${carte.nom}" loading="lazy">
         ${rupture}

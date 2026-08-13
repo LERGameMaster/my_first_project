@@ -10,6 +10,12 @@ const CLE_PANIER = "gm-tcg-panier";
 const FRAIS_DE_PORT = 4.9;
 const SEUIL_PORT_OFFERT = 50;
 
+/* Cartes retirees de la vente. Elles restent visibles au catalogue mais ne
+   peuvent plus etre commandees : le message ci-dessous est affiche a la
+   place du bouton d'achat. */
+const CARTES_INDISPONIBLES = ["essence-rose"];
+const MESSAGE_INDISPONIBLE = "LER a fermé les inscriptions";
+
 let panierMemoire = [];
 
 function stockageDisponible() {
@@ -49,9 +55,13 @@ function carteParId(id) {
   }) || null;
 }
 
+function estIndisponible(carte) {
+  return !!carte && CARTES_INDISPONIBLES.indexOf(carte.id) !== -1;
+}
+
 function ajouterAuPanier(id, quantite) {
   const carte = carteParId(id);
-  if (!carte || carte.stock === 0) {
+  if (!carte || carte.stock === 0 || estIndisponible(carte)) {
     return false;
   }
 
@@ -102,7 +112,7 @@ function lignesDetaillees() {
   return lirePanier()
     .map(function (ligne) {
       const carte = carteParId(ligne.id);
-      if (!carte) {
+      if (!carte || estIndisponible(carte)) {
         return null;
       }
       return {

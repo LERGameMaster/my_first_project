@@ -353,6 +353,58 @@ img {
   font-weight: 700;
 }
 
+/* ---------- Carte retiree de la vente ---------- */
+
+.carte--indisponible {
+  border-color: rgba(255, 47, 69, 0.45);
+}
+
+.carte--indisponible:hover {
+  transform: none;
+  border-color: rgba(255, 47, 69, 0.65);
+}
+
+.carte--indisponible .carte__visuel img {
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+.carte--indisponible .carte__prix {
+  color: var(--texte-doux);
+  text-decoration: line-through;
+}
+
+.carte__ferme,
+.produit__ferme {
+  color: var(--indisponible);
+  background: rgba(255, 47, 69, 0.1);
+  border-bottom: 1px solid rgba(255, 47, 69, 0.4);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 7px 10px;
+}
+
+.produit__ferme {
+  border: 1px solid rgba(255, 47, 69, 0.4);
+  border-radius: var(--rayon);
+  font-size: 15px;
+  padding: 12px 16px;
+  margin-bottom: 22px;
+}
+
+.produit--indisponible .produit__visuel img {
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+.produit--indisponible .produit__prix {
+  color: var(--texte-doux);
+  text-decoration: line-through;
+}
+
 .badge {
   border-radius: 999px;
   font-size: 12px;
