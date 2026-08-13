@@ -237,6 +237,39 @@ img {
   font-size: 14px;
 }
 
+/* ---------- Filtres ---------- */
+
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.champ {
+  background: var(--fond-clair);
+  border: 1px solid var(--bordure);
+  border-radius: 10px;
+  color: var(--texte);
+  font-family: inherit;
+  font-size: 15px;
+  padding: 10px 14px;
+}
+
+.champ:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+#recherche {
+  flex: 1 1 260px;
+}
+
+.vide {
+  color: var(--texte-doux);
+  padding: 30px 0;
+}
+
 /* ---------- Grille de cartes ---------- */
 
 .grille {

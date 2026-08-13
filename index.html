@@ -59,6 +59,18 @@
           <h2>Catalogue</h2>
           <p class="section__note" id="compteur-resultats">Chargement...</p>
         </div>
+
+        <div class="filtres">
+          <input type="search" id="recherche" class="champ" placeholder="Rechercher une carte ou un numero">
+          <select id="filtre-essence" class="champ">
+            <option value="">Toutes les essences</option>
+          </select>
+          <select id="filtre-rarete" class="champ">
+            <option value="">Toutes les raretes</option>
+          </select>
+          <button type="button" class="bouton bouton--vide" id="reinitialiser">Reinitialiser</button>
+        </div>
+
         <div class="grille" id="grille"></div>
       </div>
     </section>
