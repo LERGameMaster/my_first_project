@@ -371,6 +371,152 @@ img {
   color: var(--rose);
 }
 
+/* ---------- Pages internes ---------- */
+
+.page {
+  padding: 46px 20px 20px;
+}
+
+.page__titre {
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  margin-bottom: 26px;
+}
+
+.lien {
+  color: var(--accent-clair);
+  text-decoration: underline;
+}
+
+/* ---------- Panier ---------- */
+
+.panier {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 26px;
+  align-items: start;
+}
+
+.panier__lignes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ligne {
+  display: grid;
+  grid-template-columns: 64px 1fr auto auto auto;
+  align-items: center;
+  gap: 16px;
+  background: var(--fond-carte);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 12px 16px;
+}
+
+.ligne__visuel {
+  width: 64px;
+  border-radius: 6px;
+}
+
+.ligne__nom {
+  font-weight: 600;
+}
+
+.ligne__meta,
+.ligne__unite {
+  color: var(--texte-doux);
+  font-size: 13px;
+}
+
+.ligne__quantite {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantite__bouton {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--bordure);
+  background: var(--fond-clair);
+  color: var(--texte);
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.quantite__bouton:hover {
+  border-color: var(--accent);
+}
+
+.quantite__valeur {
+  min-width: 22px;
+  text-align: center;
+}
+
+.ligne__total {
+  font-weight: 700;
+  min-width: 92px;
+  text-align: right;
+}
+
+.ligne__retirer {
+  background: none;
+  border: none;
+  color: var(--texte-doux);
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.ligne__retirer:hover {
+  color: var(--alerte);
+}
+
+.recap {
+  background: var(--fond-clair);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 20px;
+  position: sticky;
+  top: 92px;
+}
+
+.recap h2 {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+
+.recap__ligne {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 7px 0;
+  color: var(--texte-doux);
+}
+
+.recap__ligne--total {
+  border-top: 1px solid var(--bordure);
+  margin-top: 8px;
+  padding-top: 12px;
+  color: var(--texte);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.recap__note {
+  color: var(--texte-doux);
+  font-size: 13px;
+  margin: 10px 0 16px;
+}
+
+.recap__action {
+  width: 100%;
+  margin-top: 8px;
+}
+
 /* ---------- Pied de page ---------- */
 
 .pied {
