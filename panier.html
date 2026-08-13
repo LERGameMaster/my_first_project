@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panier - GM TCG Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="entete">
+    <div class="conteneur entete__inner">
+      <a class="logo" href="index.html">GM <span>TCG Shop</span></a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#catalogue">Catalogue</a>
+        <a class="nav__panier actif" href="panier.html">Panier <span class="nav__compteur">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteneur page">
+    <h1 class="page__titre">Mon panier</h1>
+
+    <p class="vide" id="panier-vide" hidden>
+      Votre panier est vide. <a class="lien" href="index.html#catalogue">Parcourir le catalogue</a>
+    </p>
+
+    <div class="panier" id="panier" hidden>
+      <div class="panier__lignes" id="lignes-panier"></div>
+
+      <aside class="recap">
+        <h2>Recapitulatif</h2>
+        <div class="recap__ligne">
+          <span>Sous-total</span>
+          <span id="recap-sous-total">0,00 EUR</span>
+        </div>
+        <div class="recap__ligne">
+          <span>Livraison</span>
+          <span id="recap-port">0,00 EUR</span>
+        </div>
+        <div class="recap__ligne recap__ligne--total">
+          <span>Total</span>
+          <span id="recap-total">0,00 EUR</span>
+        </div>
+        <p class="recap__note" id="recap-note"></p>
+        <a class="bouton bouton--plein recap__action" href="commande.html">Passer commande</a>
+        <button type="button" class="bouton bouton--vide recap__action" id="vider-panier">Vider le panier</button>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied__inner">
+      <p>Projet personnel, boutique de demonstration : aucune commande n'est reellement traitee.</p>
+      <p>Set Blurness 3</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/panier.js"></script>
+</body>
+</html>
