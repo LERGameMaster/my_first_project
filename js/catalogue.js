@@ -47,7 +47,7 @@ function gabaritCarte(carte) {
     : "";
 
   return `
-    <article class="carte" data-id="${carte.id}">
+    <a class="carte" href="produit.html?id=${carte.id}" data-id="${carte.id}">
       <div class="carte__visuel">
         <img src="${carte.image}" alt="Carte ${carte.nom}" loading="lazy">
         ${rupture}
@@ -60,7 +60,7 @@ function gabaritCarte(carte) {
           <span class="${classeRarete(carte.rarete)}">${carte.rarete}</span>
         </div>
       </div>
-    </article>
+    </a>
   `;
 }
 

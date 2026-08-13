@@ -13,9 +13,11 @@ function gabaritLigne(ligne) {
   const carte = ligne.carte;
   return `
     <article class="ligne" data-id="${carte.id}">
-      <img class="ligne__visuel" src="${carte.image}" alt="Carte ${carte.nom}">
+      <a href="produit.html?id=${carte.id}">
+        <img class="ligne__visuel" src="${carte.image}" alt="Carte ${carte.nom}">
+      </a>
       <div class="ligne__infos">
-        <p class="ligne__nom">${carte.nom}</p>
+        <p class="ligne__nom"><a href="produit.html?id=${carte.id}">${carte.nom}</a></p>
         <p class="ligne__meta">No ${carte.numero} &middot; Essence ${carte.essence} &middot; ${carte.rarete}</p>
         <p class="ligne__unite">${formaterPrix(carte.prix)} l'unite</p>
       </div>
