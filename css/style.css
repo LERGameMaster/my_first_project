@@ -1,0 +1,255 @@
+/* Boutique TCG Gentle Mates - feuille de style principale */
+
+:root {
+  --fond: #0d0c12;
+  --fond-clair: #16151f;
+  --fond-carte: #1c1b27;
+  --bordure: #2a2937;
+  --texte: #ecebf4;
+  --texte-doux: #9d9ab4;
+  --accent: #7c5cff;
+  --accent-clair: #a48cff;
+  --rose: #ff5cc8;
+  --succes: #3fd18a;
+  --alerte: #ff6b6b;
+  --rayon: 14px;
+  --largeur: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--fond);
+  color: var(--texte);
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.conteneur {
+  width: 100%;
+  max-width: var(--largeur);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- En-tete ---------- */
+
+.entete {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(13, 12, 18, 0.92);
+  border-bottom: 1px solid var(--bordure);
+  backdrop-filter: blur(8px);
+}
+
+.entete__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 68px;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.logo span {
+  color: var(--accent-clair);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: 15px;
+}
+
+.nav a {
+  color: var(--texte-doux);
+  transition: color 0.15s ease;
+}
+
+.nav a:hover,
+.nav a.actif {
+  color: var(--texte);
+}
+
+.nav__panier {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--bordure);
+  border-radius: 999px;
+  padding: 6px 14px;
+  color: var(--texte);
+}
+
+.nav__compteur {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 999px;
+  min-width: 22px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 72px 0 56px;
+  background:
+    radial-gradient(900px 380px at 15% -10%, rgba(124, 92, 255, 0.28), transparent 65%),
+    radial-gradient(700px 320px at 90% 0%, rgba(255, 92, 200, 0.18), transparent 60%);
+}
+
+.hero h1 {
+  font-size: clamp(30px, 5vw, 50px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 16ch;
+}
+
+.hero p {
+  color: var(--texte-doux);
+  margin-top: 18px;
+  max-width: 58ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+/* ---------- Boutons ---------- */
+
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 11px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.bouton:hover {
+  transform: translateY(-1px);
+}
+
+.bouton--plein {
+  background: var(--accent);
+  color: #fff;
+}
+
+.bouton--plein:hover {
+  background: var(--accent-clair);
+}
+
+.bouton--vide {
+  border-color: var(--bordure);
+  color: var(--texte);
+  background: transparent;
+}
+
+.bouton--vide:hover {
+  border-color: var(--accent);
+}
+
+.bouton:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  padding: 52px 0;
+}
+
+.section__entete {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.section h2 {
+  font-size: 24px;
+  letter-spacing: -0.01em;
+}
+
+.section__note {
+  color: var(--texte-doux);
+  font-size: 14px;
+}
+
+.arguments {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.argument {
+  background: var(--fond-clair);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 20px;
+}
+
+.argument h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.argument p {
+  color: var(--texte-doux);
+  font-size: 14px;
+}
+
+/* ---------- Pied de page ---------- */
+
+.pied {
+  border-top: 1px solid var(--bordure);
+  margin-top: 40px;
+  padding: 30px 0 44px;
+  color: var(--texte-doux);
+  font-size: 14px;
+}
+
+.pied__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+}
