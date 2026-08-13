@@ -1,17 +1,18 @@
 /* Boutique TCG Gentle Mates - feuille de style principale */
 
 :root {
-  --fond: #0d0c12;
-  --fond-clair: #16151f;
-  --fond-carte: #1c1b27;
-  --bordure: #2a2937;
-  --texte: #ecebf4;
-  --texte-doux: #9d9ab4;
-  --accent: #7c5cff;
-  --accent-clair: #a48cff;
-  --rose: #ff5cc8;
+  --fond: #120c10;
+  --fond-clair: #1c141a;
+  --fond-carte: #221820;
+  --bordure: #37262f;
+  --texte: #f5ebf0;
+  --texte-doux: #b49aa6;
+  --accent: #ff3d8f;
+  --accent-clair: #ff7ab4;
+  --dore: #f5c451;
   --succes: #3fd18a;
   --alerte: #ff6b6b;
+  --indisponible: #ff2f45;
   --rayon: 14px;
   --largeur: 1180px;
 }
@@ -53,7 +54,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(13, 12, 18, 0.92);
+  background: rgba(18, 12, 16, 0.92);
   border-bottom: 1px solid var(--bordure);
   backdrop-filter: blur(8px);
 }
@@ -120,8 +121,8 @@ img {
 .hero {
   padding: 72px 0 56px;
   background:
-    radial-gradient(900px 380px at 15% -10%, rgba(124, 92, 255, 0.28), transparent 65%),
-    radial-gradient(700px 320px at 90% 0%, rgba(255, 92, 200, 0.18), transparent 60%);
+    radial-gradient(900px 380px at 15% -10%, rgba(255, 61, 143, 0.30), transparent 65%),
+    radial-gradient(700px 320px at 90% 0%, rgba(245, 196, 81, 0.14), transparent 60%);
 }
 
 .hero h1 {
@@ -295,7 +296,7 @@ img {
 
 .carte__visuel {
   position: relative;
-  background: #0a0910;
+  background: #0f0a0d;
   aspect-ratio: 0.75;
   display: flex;
   align-items: center;
@@ -312,7 +313,7 @@ img {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(13, 12, 18, 0.85);
+  background: rgba(18, 12, 16, 0.85);
   border: 1px solid var(--alerte);
   color: var(--alerte);
   border-radius: 999px;
@@ -362,13 +363,13 @@ img {
 }
 
 .badge--rare {
-  border-color: rgba(124, 92, 255, 0.6);
+  border-color: rgba(255, 61, 143, 0.6);
   color: var(--accent-clair);
 }
 
 .badge--legendaire {
-  border-color: rgba(255, 92, 200, 0.6);
-  color: var(--rose);
+  border-color: rgba(245, 196, 81, 0.6);
+  color: var(--dore);
 }
 
 /* ---------- Pages internes ---------- */
