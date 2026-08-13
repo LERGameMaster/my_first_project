@@ -237,6 +237,107 @@ img {
   font-size: 14px;
 }
 
+/* ---------- Grille de cartes ---------- */
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 22px;
+}
+
+.carte {
+  background: var(--fond-carte);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.carte:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.carte__visuel {
+  position: relative;
+  background: #0a0910;
+  aspect-ratio: 0.75;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carte__visuel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carte__rupture {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(13, 12, 18, 0.85);
+  border: 1px solid var(--alerte);
+  color: var(--alerte);
+  border-radius: 999px;
+  font-size: 12px;
+  padding: 2px 10px;
+}
+
+.carte__infos {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.carte__nom {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.carte__meta {
+  color: var(--texte-doux);
+  font-size: 13px;
+}
+
+.carte__pied {
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.carte__prix {
+  font-weight: 700;
+}
+
+.badge {
+  border-radius: 999px;
+  font-size: 12px;
+  padding: 2px 10px;
+  border: 1px solid var(--bordure);
+  color: var(--texte-doux);
+  white-space: nowrap;
+}
+
+.badge--rare {
+  border-color: rgba(124, 92, 255, 0.6);
+  color: var(--accent-clair);
+}
+
+.badge--legendaire {
+  border-color: rgba(255, 92, 200, 0.6);
+  color: var(--rose);
+}
+
 /* ---------- Pied de page ---------- */
 
 .pied {
