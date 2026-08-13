@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commande confirmee - GM TCG Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="entete">
+    <div class="conteneur entete__inner">
+      <a class="logo" href="index.html">GM <span>TCG Shop</span></a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#catalogue">Catalogue</a>
+        <a class="nav__panier" href="panier.html">Panier <span class="nav__compteur">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteneur page">
+    <section class="confirmation">
+      <p class="confirmation__pastille">Commande confirmee</p>
+      <h1 class="page__titre">Merci pour votre commande</h1>
+      <p class="confirmation__texte">
+        Votre reference de commande est <strong id="reference">GM-000000</strong>.
+        Un recapitulatif serait envoye par e-mail sur une vraie boutique ;
+        ici tout se passe dans le navigateur.
+      </p>
+      <dl class="confirmation__details">
+        <div>
+          <dt>Montant</dt>
+          <dd id="montant">-</dd>
+        </div>
+        <div>
+          <dt>Preparation</dt>
+          <dd>sous 48 h ouvrees</dd>
+        </div>
+        <div>
+          <dt>Suivi</dt>
+          <dd>envoye des la remise au transporteur</dd>
+        </div>
+      </dl>
+      <a class="bouton bouton--plein" href="index.html#catalogue">Retourner au catalogue</a>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied__inner">
+      <p>Projet personnel, boutique de demonstration : aucune commande n'est reellement traitee.</p>
+      <p>Set Blurness 3</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/confirmation.js"></script>
+</body>
+</html>

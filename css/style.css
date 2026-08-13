@@ -715,6 +715,44 @@ img {
   color: var(--texte-doux);
 }
 
+/* ---------- Confirmation ---------- */
+
+.confirmation {
+  max-width: 640px;
+  padding: 30px 0 20px;
+}
+
+.confirmation__pastille {
+  display: inline-block;
+  border: 1px solid rgba(63, 209, 138, 0.6);
+  color: var(--succes);
+  border-radius: 999px;
+  font-size: 13px;
+  padding: 3px 12px;
+  margin-bottom: 14px;
+}
+
+.confirmation__texte {
+  color: var(--texte-doux);
+}
+
+.confirmation__details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 26px 0;
+}
+
+.confirmation__details dt {
+  color: var(--texte-doux);
+  font-size: 13px;
+}
+
+.confirmation__details dd {
+  font-weight: 600;
+  margin-top: 2px;
+}
+
 /* ---------- Pied de page ---------- */
 
 .pied {
