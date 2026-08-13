@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fiche carte - GM TCG Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="entete">
+    <div class="conteneur entete__inner">
+      <a class="logo" href="index.html">GM <span>TCG Shop</span></a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#catalogue">Catalogue</a>
+        <a class="nav__panier" href="panier.html">Panier <span class="nav__compteur">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteneur page">
+    <p class="fil-ariane">
+      <a class="lien" href="index.html#catalogue">Catalogue</a>
+      <span id="fil-nom"></span>
+    </p>
+
+    <p class="vide" id="produit-introuvable" hidden>
+      Cette carte n'existe pas ou n'est plus au catalogue.
+      <a class="lien" href="index.html#catalogue">Revenir au catalogue</a>
+    </p>
+
+    <article class="produit" id="produit" hidden>
+      <div class="produit__visuel">
+        <img id="produit-image" src="" alt="">
+      </div>
+
+      <div class="produit__infos">
+        <h1 class="produit__nom" id="produit-nom"></h1>
+        <p class="produit__meta" id="produit-meta"></p>
+
+        <div class="produit__badges">
+          <span class="badge" id="produit-essence"></span>
+          <span class="badge" id="produit-rarete"></span>
+          <span class="badge" id="produit-stock"></span>
+        </div>
+
+        <p class="produit__prix" id="produit-prix"></p>
+        <p class="produit__description" id="produit-description"></p>
+
+        <div class="produit__achat">
+          <label class="produit__quantite">
+            Quantite
+            <input type="number" id="quantite" class="champ" value="1" min="1" step="1">
+          </label>
+          <button type="button" class="bouton bouton--plein" id="ajouter">Ajouter au panier</button>
+        </div>
+
+        <p class="produit__message" id="message" hidden></p>
+
+        <ul class="produit__details">
+          <li>Format 63 x 88 mm, carton 300 g, finition brillante.</li>
+          <li>Expedition sous 48 h en pochette rigide.</li>
+          <li>Livraison offerte des 50 euros d'achat.</li>
+        </ul>
+      </div>
+    </article>
+
+    <section class="section" id="bloc-suggestions" hidden>
+      <div class="section__entete">
+        <h2>Dans la meme essence</h2>
+      </div>
+      <div class="grille" id="suggestions"></div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied__inner">
+      <p>Projet personnel, boutique de demonstration : aucune commande n'est reellement traitee.</p>
+      <p>Set Blurness 3</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/produit.js"></script>
+</body>
+</html>
