@@ -6,11 +6,28 @@ const champRecherche = document.querySelector("#recherche");
 const filtreEssence = document.querySelector("#filtre-essence");
 const filtreRarete = document.querySelector("#filtre-rarete");
 const boutonReinit = document.querySelector("#reinitialiser");
+const selectTri = document.querySelector("#tri");
 
 const etat = {
   recherche: "",
   essence: "",
   rarete: "",
+  tri: "numero",
+};
+
+const TRIS = {
+  numero: function (a, b) {
+    return a.numero.localeCompare(b.numero);
+  },
+  "prix-croissant": function (a, b) {
+    return a.prix - b.prix;
+  },
+  "prix-decroissant": function (a, b) {
+    return b.prix - a.prix;
+  },
+  nom: function (a, b) {
+    return a.nom.localeCompare(b.nom, "fr");
+  },
 };
 
 function formaterPrix(valeur) {
@@ -78,8 +95,13 @@ function afficher(cartes) {
   compteurResultats.textContent = cartes.length + " carte" + (cartes.length > 1 ? "s" : "");
 }
 
+function trier(cartes) {
+  const comparateur = TRIS[etat.tri] || TRIS.numero;
+  return cartes.slice().sort(comparateur);
+}
+
 function rafraichir() {
-  afficher(filtrer());
+  afficher(trier(filtrer()));
 }
 
 function remplirFiltres() {
@@ -114,13 +136,20 @@ function brancherFiltres() {
     rafraichir();
   });
 
+  selectTri.addEventListener("change", function (event) {
+    etat.tri = event.target.value;
+    rafraichir();
+  });
+
   boutonReinit.addEventListener("click", function () {
     etat.recherche = "";
     etat.essence = "";
     etat.rarete = "";
+    etat.tri = "numero";
     champRecherche.value = "";
     filtreEssence.value = "";
     filtreRarete.value = "";
+    selectTri.value = "numero";
     rafraichir();
   });
 }
