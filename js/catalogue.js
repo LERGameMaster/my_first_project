@@ -30,10 +30,6 @@ const TRIS = {
   },
 };
 
-function formaterPrix(valeur) {
-  return valeur.toFixed(2).replace(".", ",") + " EUR";
-}
-
 function classeRarete(rarete) {
   return "badge badge--" + rarete.toLowerCase();
 }
