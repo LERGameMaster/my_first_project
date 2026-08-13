@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Commande - GM TCG Shop</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="entete">
+    <div class="conteneur entete__inner">
+      <a class="logo" href="index.html">GM <span>TCG Shop</span></a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="index.html#catalogue">Catalogue</a>
+        <a class="nav__panier" href="panier.html">Panier <span class="nav__compteur">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="conteneur page">
+    <h1 class="page__titre">Commande</h1>
+
+    <p class="vide" id="commande-vide" hidden>
+      Votre panier est vide. <a class="lien" href="index.html#catalogue">Parcourir le catalogue</a>
+    </p>
+
+    <div class="commande" id="commande" hidden>
+      <form class="formulaire" id="formulaire" novalidate>
+        <fieldset class="bloc">
+          <legend>Coordonnees</legend>
+          <div class="bloc__grille">
+            <label class="champ-bloc">
+              Prenom
+              <input class="champ" type="text" name="prenom" id="prenom" autocomplete="given-name">
+            </label>
+            <label class="champ-bloc">
+              Nom
+              <input class="champ" type="text" name="nom" id="nom" autocomplete="family-name">
+            </label>
+            <label class="champ-bloc champ-bloc--large">
+              Adresse e-mail
+              <input class="champ" type="email" name="email" id="email" autocomplete="email">
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="bloc">
+          <legend>Livraison</legend>
+          <div class="bloc__grille">
+            <label class="champ-bloc champ-bloc--large">
+              Adresse
+              <input class="champ" type="text" name="adresse" id="adresse" autocomplete="street-address">
+            </label>
+            <label class="champ-bloc">
+              Code postal
+              <input class="champ" type="text" name="codePostal" id="codePostal" inputmode="numeric" autocomplete="postal-code">
+            </label>
+            <label class="champ-bloc">
+              Ville
+              <input class="champ" type="text" name="ville" id="ville" autocomplete="address-level2">
+            </label>
+            <label class="champ-bloc champ-bloc--large">
+              Pays
+              <select class="champ" name="pays" id="pays">
+                <option value="France">France</option>
+                <option value="Belgique">Belgique</option>
+                <option value="Suisse">Suisse</option>
+                <option value="Luxembourg">Luxembourg</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="expedition" value="standard" checked>
+              <span>
+                <strong>Standard</strong>
+                <em>3 a 5 jours ouvres, offerte des 50 EUR</em>
+              </span>
+            </label>
+            <label class="option">
+              <input type="radio" name="expedition" value="express">
+              <span>
+                <strong>Express</strong>
+                <em>24 a 48 h, 9,90 EUR</em>
+              </span>
+            </label>
+          </div>
+        </fieldset>
+
+        <p class="formulaire__erreur" id="erreurs" hidden></p>
+
+        <button type="submit" class="bouton bouton--plein">Valider la commande</button>
+        <p class="formulaire__note">
+          Boutique de demonstration : aucun paiement n'est demande et aucune
+          donnee n'est envoyee sur un serveur.
+        </p>
+      </form>
+
+      <aside class="recap">
+        <h2>Votre commande</h2>
+        <div class="recap__articles" id="recap-articles"></div>
+        <div class="recap__ligne">
+          <span>Sous-total</span>
+          <span id="recap-sous-total">0,00 EUR</span>
+        </div>
+        <div class="recap__ligne">
+          <span>Livraison</span>
+          <span id="recap-port">0,00 EUR</span>
+        </div>
+        <div class="recap__ligne recap__ligne--total">
+          <span>Total</span>
+          <span id="recap-total">0,00 EUR</span>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied__inner">
+      <p>Projet personnel, boutique de demonstration : aucune commande n'est reellement traitee.</p>
+      <p>Set Blurness 3</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/commande.js"></script>
+</body>
+</html>

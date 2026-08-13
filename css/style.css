@@ -618,6 +618,103 @@ img {
   margin-top: 8px;
 }
 
+/* ---------- Commande ---------- */
+
+.commande {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 26px;
+  align-items: start;
+}
+
+.bloc {
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  padding: 20px;
+  margin-bottom: 18px;
+}
+
+.bloc legend {
+  padding: 0 8px;
+  font-weight: 600;
+}
+
+.bloc__grille {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.champ-bloc {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--texte-doux);
+}
+
+.champ-bloc--large {
+  grid-column: 1 / -1;
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--bordure);
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+
+.option:hover {
+  border-color: var(--accent);
+}
+
+.option strong {
+  display: block;
+  font-size: 15px;
+}
+
+.option em {
+  color: var(--texte-doux);
+  font-size: 13px;
+  font-style: normal;
+}
+
+.formulaire__erreur {
+  color: var(--alerte);
+  margin-bottom: 14px;
+}
+
+.formulaire__note {
+  color: var(--texte-doux);
+  font-size: 13px;
+  margin-top: 12px;
+}
+
+.recap__articles {
+  display: grid;
+  gap: 8px;
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--bordure);
+}
+
+.recap__article {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--texte-doux);
+}
+
 /* ---------- Pied de page ---------- */
 
 .pied {
