@@ -113,11 +113,23 @@ function brancherAchat(carte) {
 
   bouton.addEventListener("click", function () {
     const quantite = parseInt(document.querySelector("#quantite").value, 10) || 1;
+    const avant = nombreArticles();
+
     if (!ajouterAuPanier(carte.id, quantite)) {
       return;
     }
+
+    const ajoute = nombreArticles() - avant;
     message.hidden = false;
-    message.textContent = quantite + " x " + carte.nom + " ajoute au panier.";
+
+    if (ajoute === 0) {
+      message.textContent = "Vous avez deja tout le stock disponible dans votre panier.";
+    } else if (ajoute < quantite) {
+      message.textContent = ajoute + " x " + carte.nom
+        + " ajoute au panier, le stock ne permet pas d'aller plus loin.";
+    } else {
+      message.textContent = ajoute + " x " + carte.nom + " ajoute au panier.";
+    }
   });
 }
 
